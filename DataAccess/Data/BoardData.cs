@@ -37,7 +37,7 @@ namespace DataAccess.Data
             _db.SaveData(sp: "dbo.spBoard_Edit", board);
 
         public Task DeleteBoard(int id) =>
-            _db.SaveData(sp: "dbo.Board_Delete",
+            _db.SaveData(sp: "dbo.spBoard_Delete",
                 new { Id = id });
 
     }
