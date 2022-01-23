@@ -19,26 +19,26 @@ namespace DataAccess.DBAccess
             _confiuretion = confiuretion;
         }
 
-        public async Task<IEnumerable<T>> LoadData<T, U>(
+        public IEnumerable<T> LoadData<T, U>(
             string sp,
             U parameters,
             string connectionId = "Default")
         {
             using IDbConnection connection = new SqlConnection(_confiuretion.GetConnectionString(connectionId));
 
-            return await connection.QueryAsync<T>(sp, parameters,
+            return connection.Query<T>(sp, parameters,
                 commandType: CommandType.StoredProcedure);
 
         }
 
-        public async Task SaveData<T>(
+        public void SaveData<T>(
             string sp,
             T parameters,
             string connectionId = "Default")
         {
             using IDbConnection connection = new SqlConnection(_confiuretion.GetConnectionString(connectionId));
 
-            await connection.ExecuteAsync(sp, parameters,
+             connection.Execute(sp, parameters,
                 commandType: CommandType.StoredProcedure);
 
         }

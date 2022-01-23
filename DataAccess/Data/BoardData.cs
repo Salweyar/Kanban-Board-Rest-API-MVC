@@ -17,26 +17,26 @@ namespace DataAccess.Data
             _db = db;
         }
 
-        public Task<IEnumerable<Boards>> GetAllBoards() =>
+        public IEnumerable<Boards> GetAllBoards() =>
             _db.LoadData<Boards, dynamic>(sp: "dbo.spBoard_GetAll", new { });
 
-        public async Task<Boards?> GetBaord(int id)
+        public Boards GetBaord(int id)
         {
-            var result = await _db.LoadData<Boards, dynamic>(
+            var result = _db.LoadData<Boards, dynamic>(
                 sp: "dbo.spBoard_Get",
                 new { Id = id });
 
             return result.FirstOrDefault();
         }
 
-        public Task AddBoard(Boards board) =>
+        public void AddBoard(Boards board) =>
             _db.SaveData(sp: "dbo.spBoard_Add",
                 new { board.Title, board.Description });
 
-        public Task UpdateBoard(Boards board) =>
+        public void UpdateBoard(Boards board) =>
             _db.SaveData(sp: "dbo.spBoard_Edit", board);
 
-        public Task DeleteBoard(int id) =>
+        public void DeleteBoard(int id) =>
             _db.SaveData(sp: "dbo.spBoard_Delete",
                 new { Id = id });
 
