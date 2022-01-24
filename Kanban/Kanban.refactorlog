@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="03c7736e-0102-4186-9310-1c0bf7a35cf7" ChangeDateTime="01/23/2022 23:12:16">
+    <Property Name="ElementName" Value="[dbo].[Lists].[Board]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Lists]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BoardId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4e6e4f9d-10d0-47c4-a063-3510f80c7259" ChangeDateTime="01/23/2022 23:57:22">
+    <Property Name="ElementName" Value="[dbo].[Cards].[Assign]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Cards]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Assignee" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e32a280b-2628-416b-89d1-161393ffc17d" ChangeDateTime="01/23/2022 23:57:56">
+    <Property Name="ElementName" Value="[dbo].[Cards].[Assignee]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Cards]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AssigneTo" />
+  </Operation>
+</Operations>

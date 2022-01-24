@@ -49,6 +49,8 @@ namespace Api
             });
             services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
             services.AddSingleton<IBoardData, BoardData>();
+            services.AddSingleton<IListData, ListData>();
+            services.AddSingleton<ICardData, CardData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

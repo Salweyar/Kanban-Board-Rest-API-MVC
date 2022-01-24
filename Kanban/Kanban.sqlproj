@@ -68,8 +68,23 @@
     <Build Include="dbo\StoredProcedures\spBoard_Delete.sql" />
     <Build Include="dbo\StoredProcedures\spBoard_Add.sql" />
     <Build Include="dbo\StoredProcedures\spBoard_Edit.sql" />
+    <Build Include="dbo\Tables\Lists.sql" />
+    <Build Include="dbo\StoredProcedures\spList_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spList_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spList_Edit.sql" />
+    <Build Include="dbo\StoredProcedures\spList_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spList_Add.sql" />
+    <Build Include="dbo\Tables\Cards.sql" />
+    <Build Include="dbo\StoredProcedures\spCard_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spCard_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spCard_Edit.sql" />
+    <Build Include="dbo\StoredProcedures\spCard_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spCard_Add.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Kanban.refactorlog" />
   </ItemGroup>
 </Project>
