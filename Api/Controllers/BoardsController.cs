@@ -1,5 +1,6 @@
 ﻿using DataAccess.Data;
 using DataAccess.Models;
+using KanbanApi.Attributes;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace KanbanApi.Controllers
 {
+
+    [ApiKey]
     [Route("api/boards")]
     [ApiController]
     public class BoardsController : ControllerBase
@@ -31,7 +34,7 @@ namespace KanbanApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<Boards> GetBoard(int id)
         {
-            var board = _board.GetBaord(id);          
+            var board = _board.GetBaord(id);
 
             return board;
         }
@@ -44,13 +47,13 @@ namespace KanbanApi.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public void AddNewBoard(string title, string description)
         {
-            _board.AddBoard(new Boards { Title = title, Description = description });            
+            _board.AddBoard(new Boards { Title = title, Description = description });
         }
 
         [HttpPut("{id}")]
         public void UpdateBoard(int id, string title, string description)
         {
-             _board.UpdateBoard(new Boards { Id = id, Title = title, Description = description });            
+            _board.UpdateBoard(new Boards { Id = id, Title = title, Description = description });
         }
 
         /// <summary>
@@ -60,7 +63,7 @@ namespace KanbanApi.Controllers
         [HttpDelete("{id}")]
         public void DeleteBoard(int id)
         {
-            _board.DeleteBoard(id);           
+            _board.DeleteBoard(id);
         }
 
     }
